@@ -12,10 +12,10 @@ const PrimaryLayout = () => (
     <main>
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/demo1" exact component={Demo1} />
-        <Route path="/demo2" component={Demo2} />
-        <Route path="/demo3" exact component={Demo3} />
-        <Route path="/demo4" exact component={Demo4} />
+        <Route path="/demo1" component={Demo1} />
+        <Route path="/demo2" render={() => <Demo2 name="Zevi" number={20} />} />
+        <Route path="/demo3" component={() => <Demo3 name="Zevi" number={30} />} />
+        <Route path="/demo4" component={Demo4} />
         <Redirect to="/" />
       </Switch>
     </main>

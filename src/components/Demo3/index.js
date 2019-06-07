@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import { compose } from 'recompose';
 
-export default class Demo3 extends Component {
-  render() {
-    return (
-      <div>
-        Demo3
-      </div>
-    )
-  }
-}
+import {
+  Page,
+  numberAddOne,
+  greetingWithName,
+  addATitle
+} from '../Demo2'
+
+const hoc = compose(
+  addATitle,
+  greetingWithName('Hello3'),
+  numberAddOne,
+);
+const Demo3 = hoc(Page);
+
+export default Demo3
