@@ -11,20 +11,47 @@ const numberAddOne = Component => ({ number, ...props }) => (
   <Component {...props} number={number + 1} />
 );
 
-const greetingWithName = greeting => Component => ({ name, ...props }) => (
-  <Component {...props} name={`${greeting}, ${name}`} />
-);
+const numberTimesTwo =
+  somtText => (
+    Component => ({ number, ...props }) =>
+      (
+        <>
+          <h3>{somtText}</h3>
+          <Component {...props} number={number * 2} />
+        </>
+      )
+  )
+
+const greetingWithName =
+  greeting => (
+    Component =>
+      ({ name, ...props }) => (
+        <Component {...props} name={`${greeting}, ${name}`} />
+      )
+  )
 
 const addATitle = Component => props => (
-  <React.Fragment>
+  <>
     <h1>I'm Title</h1>
     <Component {...props} />
-  </React.Fragment>
+  </>
 );
 
-const Demo2 = addATitle(
-  greetingWithName('Hello2')(
-    numberAddOne(Page)
+const addAFooter = Component => props => (
+  <>
+    <Component {...props} />
+    <hr />
+    <h2>I'm Footer</h2>
+  </>
+);
+
+const Demo2 = addAFooter(
+  addATitle(
+    greetingWithName('Hello2')(
+      numberTimesTwo('times!!')(
+        numberAddOne(Page)
+      )
+    )
   )
 )
 
@@ -32,6 +59,9 @@ export {
   Page,
   numberAddOne,
   greetingWithName,
-  addATitle
+  addATitle,
+  addAFooter,
+  numberTimesTwo
+
 }
 export default Demo2
