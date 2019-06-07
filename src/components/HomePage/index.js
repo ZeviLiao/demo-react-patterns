@@ -6,7 +6,7 @@ class DisplayTheSecret extends Component {
     const { secretToLife } = this.props
     return (
       <div>
-        Hello, {secretToLife}.
+        Hello, {secretToLife}
       </div>
     )
   }
