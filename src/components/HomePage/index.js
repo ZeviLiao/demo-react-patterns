@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import withSecretToLife from './components/withSecretToLife';
 
-const DisplayTheSecret = props => (
-  <div>
-    The secret to life is {props.secretToLife}.
-  </div>
-);
+class DisplayTheSecret extends Component {
+  render() {
+    const { secretToLife } = this.props
+    return (
+      <div>
+        Hello, {secretToLife}.
+      </div>
+    )
+  }
+}
 
 const WrappedComponent = withSecretToLife(DisplayTheSecret);
 

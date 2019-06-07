@@ -1,17 +1,14 @@
 import React from 'react';
 
 const withSecretToLife = (WrappedComponent) => {
-  class HOC extends React.Component {
-    render() {
-      return (
-        <WrappedComponent
-          {...this.props}
-          secretToLife={42}
-        />
-      );
-    }
+  const HOC = (props) => {
+    return (
+      <WrappedComponent
+        {...props}
+        secretToLife={43}
+      />
+    );
   }
-    
   return HOC;
 };
 
