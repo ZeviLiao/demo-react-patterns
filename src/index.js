@@ -6,7 +6,8 @@ import App from './components/App'
 // import Home from '../components/Home'
 // import About from '../components/About'
 // import Features from '../components/Features'
-import 'antd/dist/antd.css';
+import 'semantic-ui/dist/semantic.min.css';
+// import 'antd/dist/antd.css';
 
 ReactDOM.render(
     <App/>, document.getElementById('root'));

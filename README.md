@@ -1,8 +1,17 @@
 
-ref:  
-https://blog.techbridge.cc/2018/06/27/advanced-react-component-patterns-note/
+ref :  
 
-https://blog.techbridge.cc/2018/07/21/advanced-react-component-patterns-note-II/
+https://levelup.gitconnected.com/understanding-react-higher-order-components-by-example-95e8c47c8006
 
-all topic  
-https://github.com/search?q=react-patterns
+The higher-order component pattern
+```
+const higherOrderComponent = (WrappedComponent) => {
+  class HOC extends React.Component {
+    render() {
+      return <WrappedComponent />;
+    }
+  }
+    
+  return HOC;
+};
+```
