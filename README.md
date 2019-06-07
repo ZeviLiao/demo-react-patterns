@@ -15,3 +15,7 @@ const higherOrderComponent = (WrappedComponent) => {
   return HOC;
 };
 ```
+
+```
+const SimpleHOC = higherOrderComponent(MyComponent);
+```
